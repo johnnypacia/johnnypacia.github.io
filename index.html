@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Nunito:700' rel='stylesheet' type='text/css'>
+	<title>Simon Strums</title>
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<!-- 	// <script type="text/javascript" src="main.js"></script> -->
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id = "container">
+		<!-- GAME TITLE -->
+		<h1 id="game-title">SIMON STRUMS</h1>
+		<!-- CONTAINER FOR COLOR-BOXES-->
+		<div id= "color-box-container">
+		<!-- COLOR-BOXES -->
+			<div class="orange box">
+			 <audio id="orange-note" src="orange-note.m4a"></audio>
+			</div>
+			<div id= "green" class="green box">
+			 <audio id="green-note" src="green-note.m4a"></audio>
+			</div>
+			<div id= "purple" class="purple box">
+			<audio id="purple-note" src="purple-note.m4a"></audio>
+			</div>
+			<div id= "brown" class="brown box">
+			<audio id="brown-note" src="brown-note.m4a"></audio>
+			</div>
+		</div>
+		<div id= "game-over">
+			<h1 class="play-again">PRESS start TO PLAY!</h1>
+		</div>
+		<!-- START BUTTON -->
+		<button id="btn" class="button">start</button>
+		<!-- RESET BUTTON -->
+		<button id="reset" class="button">reset</button>
+		<!-- SCORE COUNTER -->
+		<div id="score">
+			<h1 class="score-counter">SCORE: 0</h1>
+		</div>
+		<script type="text/javascript" src="main.js"></script>
+	</div>
+	</body>
+</html>
