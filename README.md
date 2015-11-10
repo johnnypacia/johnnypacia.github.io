@@ -23,14 +23,20 @@ User Story:
 
 Front-end Wireframe: 
 
--see wireFrames.jpg 
+-Please see the wireFrames.jpg attached in folder.  
 
 List of technologies used:
+
 -Sublime Text
+
 -GitHub.com 
+
 -Stack Overflow
+
 -W3 schools
+
 -MDN: html, javascript, and css libraries
+
 -GarageBand(recorded Martin D-16 with a Shure SM7), iTunes to convert soundclips to .m4a 
 
  

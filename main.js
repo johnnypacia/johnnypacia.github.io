@@ -11,9 +11,9 @@ var computerMoves = [];
 var playerMoves = [];
 var score = 0;
 
+//FUNCTION FOR COMPUTER'S RANDOM SELECTION: 
 
 var startItUp = function(event){
-		//Computer to randomly select one of the boxes:
 		window.setTimeout(gameInstruction, 1000);
 	var blueNotes = [orangeNote, greenNote, purpleNote, brownNote];
 	var randomIndex = Math.floor(Math.random()*blueNotes.length);
@@ -50,13 +50,14 @@ var startItUp = function(event){
 		setTimeout(function(){
 			randomSelection.classList.remove("black");
 		}, 1000);
-	}	
+	}
 	computerMoves.push(randomIndex);
 	console.log(computerMoves);
 };
-
+//STARTS THE GAMEPLAY:
 startButton.addEventListener('click', startItUp);
 
+//FUNCTION FOR USER SELECTION:
 var lightItUp= function(event){
 	if (event.target.classList.contains("orange") === true){
 		setTimeout(function(){
@@ -99,40 +100,40 @@ var lightItUp= function(event){
 		playerMoves.push(3);
 		console.log(playerMoves);
 	} 
+	//RESULTS OF USER SELECTION: 
 	if ( doTheyMatch(computerMoves, playerMoves) ){
 			score ++;
 			window.setTimeout(startItUp, 1500);
 			window.setTimeout(displayScore, 1000);
-		// push another thing into the array
-		// rerun the computer's function
-		//score++;
+	//GAME-OVER and RESET:
 	} else {
 		window.setTimeout(playAgain, 1000);
 		resetButton.addEventListener('click', gameReset); 
 	}
 };
 
+//ALLOWS USER TO CLICK ON BOXES and LOGS RESULT:
 orangeNote.addEventListener('click', lightItUp);
 greenNote.addEventListener('click', lightItUp);
 purpleNote.addEventListener('click', lightItUp);
 brownNote.addEventListener('click', lightItUp);
 
-
-
-// STACK OVERFLOW: 
-// http://stackoverflow.com/questions/22395357/how-to-compare-two-arrays-are-equal-using-javascript-or-jquery
-
+//POSTS IN-PROGRESS INSTRUCTIONS: 
 var gameInstruction = function () {
 	document.querySelector('.play-again').textContent='Click the right box to match Simon!';
 };
 
+//POSTS SCORE IF PLAYER WINS:
 var displayScore = function (){
 	document.querySelector('.score-counter').textContent='You win!  SCORE: ' + score;
 };
 
+//POSTS INSTRUCTIONS WHEN PLAYER LOSES"
 var playAgain = function () {
 	document.querySelector('.play-again').textContent='You lose! press RESET to continue';
 };
+
+//RESETS COUNTER, RESETS GAME:
 
 var gameReset = function (){
 	computerMoves = [];
@@ -140,6 +141,12 @@ var gameReset = function (){
 	document.querySelector('.play-again').textContent='PRESS start TO PLAY!';
 	document.querySelector('.score-counter').textContent='SCORE: 0';
 };
+
+
+// THIS FUNCTION COMPARES THE LENGTH AND CONTENT OF TWO ARRAYS AND RETURN A TRUE/FALSE VALUE 
+// See STACK OVERFLOW: 
+// http://stackoverflow.com/questions/22395357/how-to-compare-two-arrays-are-equal-using-javascript-or-jquery
+
 
 var doTheyMatch = function (arr1, arr2){
 	console.log("checking match...");
@@ -156,14 +163,4 @@ var doTheyMatch = function (arr1, arr2){
     return true;
 };
 
-
-
-// PHIL'S SUGGESTION: 
-//var isGameActive = true; 
-// while (isGameActive) {
-//   // whatever code 
-//   isGameActive = doTheyMatch(computerMoves, playerMoves);
-// }
-// gameOver() // some function that resets the game state and changes the DOM to say "play again"
-
-
+//GAME IS MISSING FUNCTIONALITY FOR COMPUTER REPLAYING THE NOTES SELECTED IN PREVIOUS ROUNDS

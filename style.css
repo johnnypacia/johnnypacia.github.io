@@ -1,6 +1,8 @@
 
 
-/* MDN article on Media Queries:
+/* THESE MEDIA QUERIES SET WINDOW SPECS SO THAT <BODY> and <DIV> ELEMENTS 
+STAY IN THE SAME SPOT IF USER RESIZES BROWSER.
+SEE MDN article on Media Queries:
 https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries*/
 /*MDN article on scaling background images: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Background_and_Borders/Scaling_background_images#Special_values.3A_.22contain.22_and_.22cover.22
 */
@@ -79,6 +81,7 @@ body {
   
 }
  
+ /*SETS STYLES FOR FONTS, COLOR, DIV POSITONING AND BUTTONS*/
 #game-title {
   font-family: 'Nunito', sans-serif;
 }
